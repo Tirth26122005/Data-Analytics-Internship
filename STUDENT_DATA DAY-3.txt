@@ -1,0 +1,50 @@
+create database  student_db;
+use student_db;
+create table students (student_id int primary key ,student_name varchar(30),
+student_age int ,student_city varchar(30),Student_education varchar(20));
+show   databases;
+show tables ;
+insert into students values(01,'RAHUL',23,'MUMBAI','BBA'),
+(02,'DHRUV',23,'AHMEDABAD','PHD'),
+(03,'DHAWAN',63,'CHENNAI','BE'),
+(04,'SHIVAM',53,'GOTA','B-TECH'),
+(05,'ANAND',21,'PUNE','BCOM'),
+(06,'CHETAN',33,'MEHSANA','BSC');
+insert into students values(07,'TIRTH',24,'PANJI','BBA'),
+(08,'YASH',43,'MEHSANA','MSC'),
+(09,'KHUSHI',22,'BANDRA','B-DESIGN'),
+(10,'DHRUMIL',28,'GOTA','B-TECH');
+SELECT * FROM STUDENTS;
+UPDATE STUDENTS SET STUDENT_AGE = 18 WHERE STUDENT_AGE =23; 
+
+SELECT * FROM  STUDENTS WHERE STUDENT_AGE >20;
+SELECT * FROM STUDENTS WHERE STUDENT_EDUCATION = 'b-TECH';
+SELECT * FROM STUDENTS WHERE STUDENT_NAME LIKE 'A%' ;
+SELECT * FROM STUDENTS WHERE STUDENT_AGE between 18 AND 25;
+
+SELECT STUDENT_NAME FROM STUDENTS;
+
+
+
+-------------------------------- [DAY - 3 WEDNESDAY] ------------------------------
+
+-- Display all students sorted alphabetically by name.
+SELECT * FROM STUDENTS ORDER BY  STUDENT_NAME ASC;
+
+-- Display all students sorted by age (ascending & descending).
+SELECT * FROM STUDENTS ORDER BY STUDENT_AGE ASC;
+SELECT * FROM STUDENTS ORDER BY STUDENT_AGE DESC;
+
+-- Show top 3 youngest students using LIMIT.
+SELECT * FROM STUDENTS ORDER BY STUDENT_AGE ASC  LIMIT 3;
+SELECT *  FROM STUDENTS ORDER BY STUDENT_AGE DESC LIMIT 3;
+-- 
+UPDATE STUDENTS SET STUDENT_AGE = 39 WHERE STUDENT_AGE = 22;
+
+SELECT * FROM STUDENTS;
+
+-- Update a student’s: age,course
+UPDATE STUDENTS SET STUDENT_AGE = 25 WHERE STUDENT_ID = 6;
+
+-- Delete one student whose record you no longer need.
+DELETE FROM STUDENTS WHERE STUDENT_ID = 10;
